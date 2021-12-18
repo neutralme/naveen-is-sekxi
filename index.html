@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Sekxi Naveen</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #000000;
+      overflow: hidden;
+      font-size: 15pt;
+    }
+
+    span {
+      position: absolute;
+      font-weight: bold;
+      font-size: 2rem;
+      background: -webkit-linear-gradient(60deg, #2ebf91, #8360c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: animate 5s linear infinite;
+    }
+
+    span:nth-child(3n+1) {
+      text-shadow: 2px 2px 10px #ec2F4B;
+      background: -webkit-linear-gradient(60deg, #ec2F4B, #009FFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    span:nth-child(3n+2) {
+      text-shadow: 2px 2px 10px #2ebf91;
+      background: -webkit-linear-gradient(60deg, #2ebf91, #8360c3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    span:nth-child(3n+3) {
+      text-shadow: 2px 2px 10px #0083B0;
+      background: -webkit-linear-gradient(60deg, #0083B0, #00B4DB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes animate {
+      0% {}
+
+      100% {
+        transform: translateY(calc(100px + 100vh));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    document.body.onload = function() {
+      let navin = 150,
+        n = 0;
+      while (n < navin) {
+        let naveen = document.createElement('span');
+        naveen.textContent = 'Naveen is Sekxi';
+        naveen.style.fontSize = (Math.random() * 20).toFixed(0) + 'px';
+        naveen.style.left = (Math.random() * window.innerWidth - 50) + 'px';
+        naveen.style.animationDuration = (Math.random() * 20 + 4) + 's';
+        naveen.style.animationDelay = (Math.random() * -100) + 's';
+        document.body.appendChild(naveen);
+        n++;
+      }
+      console.log(document.body);
+    }
+  </script>
+</body>
+
+</html>
